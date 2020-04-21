@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <div class="pt-5">
+            <div class="py-5">
                 <h5>Name : <%= data.name %></h5>
                 <h5>Age : <%= data.Age %></h5>
                 <h5>Gender : <%= data.gender %></h5>
@@ -15,17 +15,35 @@
         </div>
         <div class="col-6">
             <img src="assets\e7c1de41c8b7cabb5a86d73970729a1c_about-the-naspp-naspp_300-300.png" alt="">            
-        </div>
-    </div>       
+        </div>        
+    </div>
+    <a class="btn btn-primary my-5" href="/<%= id %>/addtasks">Add Task</a>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Deadline</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% docsnap.forEach(task =>{ %>
+            <tr>
+                <td><%= task.data().title %></td>
+                <td>
+                    <%if(task.data().status == true ){ %>
+                        pending
+                    <% }else{ %>
+                        Completed
+                    <% } %>
+                </td>
+                <td><%= task.data().deadline %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+     
 </div>
-
-
-
-
-
-
-
-
 
 
 

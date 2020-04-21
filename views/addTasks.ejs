@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+
+
+
+<div class="container">
+    <form action="/<%= id %>/addTasks" method="POST">
+        <div class="form-group form-check">
+            <label for="name">Title</label>
+            <input type="text" class="form-control" aria-describedby="emailHelp" name="title">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group form-check">
+              <label for="name">Description</label>
+              <textarea name="dscrip"></textarea>
+          </div>
+          <div class="form-group form-check">
+              <label for="name">Deadline</label>
+              <input type="date" class="form-control" aria-describedby="emailHelp" name="deadline">
+          </div>
+          <div class="form-check">
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+<%- include("partials/footer") %>

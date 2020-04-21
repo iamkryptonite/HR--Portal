@@ -5,7 +5,7 @@
 <h1>hello</h1>
 <ul>
     <% data.forEach((doc) => { %>
-        <!-- <% console.log(doc.data().name) %>     -->
+        
         <li><a href="/<%-doc.id %>"><%=doc.data().name %></a>-<%=doc.data().Age %>-<%=doc.data().designation %></li>
     
     <% }); %>

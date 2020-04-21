@@ -25,7 +25,6 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-//   firebase.(database);
 let db = firebase.firestore();
 
 
@@ -61,15 +60,18 @@ app.post("/addEmployee",function(req,res){
             res.redirect("/");
         }); 
 });
-//adding a collection called tasks in a document with the given id 
+//shows info of an employee 
 app.get("/:id",function(req,res){
-    let cityRef = db.collection('employees').doc(req.params.id);
-    let getDoc = cityRef.get()
+    let ref = db.collection('employees').doc(req.params.id);
+    let getDoc = ref.get()
     .then(doc => {
         if (!doc.exists) {
         console.log('No such document!');
         } else {
-        res.render("show",{data:doc.data()});
+            ref.collection('tasks').get().then(snap =>{
+                res.render("show",{data:doc.data(),id:doc.id,docsnap:snap});
+            });
+        
         }
     })
     .catch(err => {
@@ -77,13 +79,36 @@ app.get("/:id",function(req,res){
     });    
 
 });
+//add tasks to tasks subcollection of an employee
+app.get("/:id/addtasks",function(req,res){
+    res.render("addTasks",{id:req.params.id});
+    // let tasks=db.collection('employees').doc(req.params.id).collection('tasks').doc()
 
-let doc=db.collection('employees').doc('QjAgkvWPSA0BHOlWmKRL');
-doc.collection("tasks").get().then( tasks =>{
-    tasks.forEach( item =>{
-        console.log(item.data());
+});
+app.post("/:id/addtasks",function(req,res){
+    //res.render("addTasks",{id:req.params.id});
+    var task={
+        title:req.body.title,
+        description: req.body.dscrip,
+        status: true,
+        deadline: req.body.deadline
+    }
+    db.collection('employees').doc(req.params.id).collection('tasks').add(task).then(ref=>{
+        console.log(req.params.id);
+        //var i=req.params.id;
+        res.redirect("/"+req.params.id);
     });
 });
+
+// let doc=db.collection('employees').doc('QjAgkvWPSA0BHOlWmKRL');
+// doc.collection("tasks").get().then( tasks =>{
+//     tasks.forEach( item =>{
+//         // console.log(item.data());
+//     });
+// });
+
+
+// wdgkdjksjxaxascasaasschdka
 
 
 
