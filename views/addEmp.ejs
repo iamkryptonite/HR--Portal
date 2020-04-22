@@ -7,26 +7,45 @@
     <form action="/addEmployee" method="POST">
         <div class="form-group form-check">
           <label for="name">Name</label>
-          <input type="text" class="form-control" aria-describedby="emailHelp" name="name">
-          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          <input type="text" class="form-control" aria-describedby="emailHelp" name="name" >
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group form-check">
+                    <label for="name">Date of birth</label>
+                    <input type="date" class="form-control"  aria-describedby="emailHelp" name="age">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group form-check">
+                    <label for="name">Gender</label>
+                    <select class="custom-select" name="gender">
+                        <option selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                </div>
+            </div>
         </div>
         <div class="form-group form-check">
-            <label for="name">Age</label>
-            <input type="text" class="form-control"  aria-describedby="emailHelp" name="age">
+            <label for="name">Email</label>
+            <input type="email" class="form-control"  aria-describedby="emailHelp" name="email" required >>
         </div>
+        <!-- <div class="form-group form-check">
+            <label for="name">Password</label>
+            <input type="password" class="form-control"  aria-describedby="emailHelp" name="password" required>
+        </div> -->
         <div class="form-group form-check">
-            <label for="name">Gender</label>
-            <select class="custom-select" name="gender">
-                <option selected>Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
+            <label for="name">Phone</label>
+            <input type="tel" class="form-control"  aria-describedby="emailHelp" name="phone" pattern="[0-9]{10}" placeholder="+91">
         </div>
+        
         <div class="form-group form-check">
             <label for="name">Designation</label>
             <input type="text" class="form-control" aria-describedby="emailHelp" name="designation">
         </div>
+
         <div class="form-check">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>

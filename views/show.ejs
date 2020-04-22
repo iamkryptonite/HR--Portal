@@ -1,8 +1,4 @@
 <%- include ("partials/header") %>
-
-
-
-
 <div class="container">
     <div class="row">
         <div class="col-6">
@@ -14,10 +10,15 @@
             </div>
         </div>
         <div class="col-6">
-            <img src="assets\e7c1de41c8b7cabb5a86d73970729a1c_about-the-naspp-naspp_300-300.png" alt="">            
+            <img src="assets\e7c1de41c8b7cabb5a86d73970729a1c_about-the-naspp-naspp_300-300.png" alt="" height="200px">
+            <div>
+                <a class="btn btn-success my-5" href="/<%= id %>/edit">Edit Profile</a>
+            </div>            
         </div>        
     </div>
-    <a class="btn btn-primary my-5" href="/<%= id %>/addtasks">Add Task</a>
+    <div>
+        <a class="btn btn-primary my-5" href="/<%= id %>/addtasks">Add Task</a>
+    </div>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -41,21 +42,8 @@
             </tr>
             <% }); %>
         </tbody>
-    </table>
-     
+    </table>     
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 <%- include ("partials/footer") %>
 
 

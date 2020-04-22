@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="public\dashboard.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- <script src="https://kit.fontawesome.com/ed76cbd5d2.js" crossorigin="anonymous"></script> -->
+        <link rel="stylesheet" href="">
+    </head>
+    <body> 
+        <div class="container mt-10%">
+            <h1>Loginp Page</h1>
+            <form action="/login" method="POST">
+                <div class="form-group form-check">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" aria-describedby="emailHelp" name="email" required>
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="form-group form-check">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" aria-describedby="emailHelp" name="password" required>        
+                </div>    
+                <div class="form-check">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

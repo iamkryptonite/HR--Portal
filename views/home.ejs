@@ -1,16 +1,17 @@
 <%- include ("partials/header") %>
 
+<div class="jumbotron">
+    <h1>Welcome back</h1>
+</div>
+<div class="container">
+    <h1>hello</h1>
+    <ul class="list-group">
+        <% data.forEach((doc) => { %>        
+            <li class="list-group-item"><a href="/<%-doc.id %>" active><%=doc.data().name %>-<%=doc.data().designation %></a></li>    
+        <% }); %>
+    </ul>
+</div>
 
-
-<h1>hello</h1>
-<ul>
-    <% data.forEach((doc) => { %>
-        
-        <li><a href="/<%-doc.id %>"><%=doc.data().name %></a>-<%=doc.data().Age %>-<%=doc.data().designation %></li>
-    
-    <% }); %>
-
-</ul>
 
 
 
